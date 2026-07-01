@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <button id="logoutBtn">🚪 Logout</button>
+    
+    <button id="themeBtn">🌙 Dark Mode</button>
+
+    <h1>aqua's To-Do List</h1>
+    
+   <p id="taskCounter">0 Tasks</p>
+
+   <div class="progressBox">
+
+    <div class="progressTop">
+        <span>Progress</span>
+        <span id="progressText">0%</span>
+    </div>
+
+    <div class="progressBar">
+
+        <div id="progressFill"></div>
+
+    </div>
+
+</div>
+
+  <input type="text" id="taskInput" placeholder="What do you need to do today?">
+
+  <select id="priority">
+    <option value="High">🔴 High</option>
+    <option value="Medium" selected>🟡 Medium</option>
+    <option value="Low">🟢 Low</option>
+</select>
+
+<button onclick="addTask()">Add Task</button>
+
+<input type="text" id="searchTask" placeholder="🔍 Search tasks...">
+
+<div class="filters">
+    <button onclick="filterTasks('all')">All</button>
+    <button onclick="filterTasks('active')">Active</button>
+    <button onclick="filterTasks('completed')">Completed</button>
+    <button onclick="clearCompleted()">🗑 Clear Completed</button>
+</div>
+
+<ul id="taskList"></ul>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
