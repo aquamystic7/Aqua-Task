@@ -36,24 +36,34 @@
 
   <input type="text" id="taskInput" placeholder="What do you need to do today?">
 
-  <select id="priority">
-    <option value="High">🔴 High</option>
-    <option value="Medium" selected>🟡 Medium</option>
-    <option value="Low">🟢 Low</option>
-</select>
+<div class="taskControls">
 
-<button onclick="addTask()">Add Task</button>
+    <select id="priority">
+        <option value="High">🔴 High</option>
+        <option value="Medium" selected>🟡 Medium</option>
+        <option value="Low">🟢 Low</option>
+    </select>
+
+    <button class="addBtn" onclick="addTask()">
+        Add Task
+    </button>
+
+</div>
 
 <input type="text" id="searchTask" placeholder="🔍 Search tasks...">
 
 <div class="filters">
-    <button onclick="filterTasks('all')">All</button>
-    <button onclick="filterTasks('active')">Active</button>
-    <button onclick="filterTasks('completed')">Completed</button>
-    <button onclick="clearCompleted()">🗑 Clear Completed</button>
-</div>
 
-<ul id="taskList"></ul>
+    <button onclick="filterTasks('all')">All</button>
+
+    <button onclick="filterTasks('active')">Active</button>
+
+    <button onclick="filterTasks('completed')">Completed</button>
+
+    <button class="clearBtn" onclick="clearCompleted()">
+        🗑 Clear Completed
+    </button>
+
 </div>
 
 <script src="script.js"></script>

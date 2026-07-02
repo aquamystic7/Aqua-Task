@@ -19,10 +19,15 @@ body{
 
     animation:gradient 15s ease infinite,
               fadeIn .8s ease;
+
+              .container{
+
+    width:460px;
+
+    max-width:95%;
+
+    padding:32px;
 }
-.container{
-    width:420px;
-    padding:30px;
 
     background:rgba(255,255,255,.15);
     backdrop-filter:blur(20px);
@@ -138,44 +143,50 @@ li{
     }
 }
 
-li button{
-    background:#ff4d4d;
+/* ---------- Common Button Style ---------- */
+
+button{
+
+    height:46px;
+    padding:0 18px;
+
+    border:none;
+    border-radius:12px;
+
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s ease;
+}
+
+/* ---------- LIGHT MODE ---------- */
+
+body:not(.dark) button{
+
+    background:linear-gradient(135deg,#007bff,#00b4ff);
     color:white;
 }
 
-li button:hover{
-    background:#e60000;
+body:not(.dark) button:hover{
+
+    background:linear-gradient(135deg,#0069d9,#0096e6);
+    box-shadow:0 8px 20px rgba(0,123,255,.35);
 }
 
-@keyframes fade{
-    from{
-        opacity:0;
-        transform:translateY(15px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
+/* ---------- DARK MODE ---------- */
 
-/* Dark Mode */
+.dark button{
 
-.dark{
-    background:#0f172a;
-}
-
-.dark .container{
-    background:#1e293bcc;
-}
-
-.dark input{
     background:#334155;
     color:white;
 }
 
-.dark li{
-    background:#334155;
-    color:white;
+.dark button:hover{
+
+    background:#475569;
+    box-shadow:0 8px 20px rgba(0,0,0,.35);
 }
 @keyframes fadeIn{
     from{
@@ -186,17 +197,14 @@ li button:hover{
         opacity:1;
         transform:scale(1);
     }
-    body,
-.container,
-li,
-input,
-button{
-    transition:.4s;
 }
+
 button{
     position:relative;
+    transition:.4s;
     overflow:hidden;
 }
+
 .completed{
     text-decoration:line-through;
     opacity:.6;
@@ -314,4 +322,152 @@ select{
     border-radius:20px;
     background:linear-gradient(90deg,#00f2fe,#4facfe);
     transition:.5s;
+}
+/* ---------- Logout Button ---------- */
+
+#logoutBtn{
+
+    width:110px;
+    height:45px;
+
+    margin-bottom:18px;
+
+    background:white;
+    color:#333;
+
+    font-weight:600;
+
+    border-radius:12px;
+}
+
+/* ---------- Dark Button ---------- */
+
+#themeBtn{
+
+    height:45px;
+
+    margin-bottom:25px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+/* ---------- Input + Button ---------- */
+
+.taskControls{
+
+    display:flex;
+
+    gap:12px;
+
+    align-items:center;
+
+    margin-top:15px;
+
+    margin-bottom:18px;
+}
+
+.taskControls select{
+
+    flex:1;
+
+    margin:0;
+
+    height:46px;
+}
+
+.addBtn{
+
+    width:130px;
+
+    height:46px;
+
+    margin:0;
+
+    background:#ffffff;
+
+    color:#333;
+
+    font-weight:600;
+}
+
+.addBtn:hover{
+
+    background:#f4f4f4;
+}
+
+/* ---------- Search ---------- */
+
+#searchTask{
+
+    margin-top:0;
+
+    margin-bottom:20px;
+
+    height:46px;
+}
+
+/* ---------- Filter Buttons ---------- */
+
+.filters{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:10px;
+
+    justify-content:center;
+}
+
+.filters button{
+
+    min-width:95px;
+
+    height:44px;
+
+    padding:0 18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:600;
+
+    background:white;
+
+    color:#333;
+}
+
+.clearBtn{
+
+    min-width:170px;
+}
+
+/* ---------- Hover ---------- */
+
+.filters button:hover,
+#logoutBtn:hover,
+.addBtn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+/* ---------- Better Inputs ---------- */
+
+input,
+select{
+
+    height:46px;
+
+    font-size:15px;
 }
